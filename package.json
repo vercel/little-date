@@ -7,6 +7,10 @@
   "repository": "timolins/little-date",
   "main": "dist/format-date-range.js",
   "types": "dist/format-date-range.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsup src/format-date-range.ts --format cjs,esm --dts-resolve",
     "test": "TZ=UTC vitest"
