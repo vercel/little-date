@@ -23,17 +23,21 @@ const shortenAmPm = (text: string): string => {
 
 const removeLeadingZero = (text: string): string => text.replace(/^0/, "");
 
-export const createFormatTime =
+export const formatTime = (date: Date, locale?: string): string => {
+  return removeLeadingZero(
+    shortenAmPm(
+      date.toLocaleTimeString(locale, {
+        hour: "2-digit",
+        minute: "2-digit",
+      }) || ""
+    )
+  );
+};
+
+const createFormatTime =
   (locale?: string) =>
   (date: Date): string =>
-    removeLeadingZero(
-      shortenAmPm(
-        date.toLocaleTimeString(locale, {
-          hour: "2-digit",
-          minute: "2-digit",
-        }) || ""
-      )
-    );
+    formatTime(date, locale);
 
 const getNavigatorLanguage = (): string => {
   if (typeof window === "undefined") {
