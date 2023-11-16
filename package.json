@@ -1,15 +1,22 @@
 {
   "name": "little-date",
   "version": "1.0.0",
-  "description": "Small & sweet date formatting library",
-  "main": "index.js",
+  "description": "Small & sweet date-range formatting library",
+  "author": "Timo Lins",
+  "license": "MIT",
+  "repository": "timolins/little-date",
+  "main": "dist/format-date-range.js",
+  "types": "dist/format-date-range.d.ts",
   "scripts": {
     "build": "tsup src/format-date-range.ts --format cjs,esm --dts-resolve",
     "test": "TZ=UTC vitest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "date range",
+    "formatting",
+    "short",
+    "compact"
+  ],
   "devDependencies": {
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",

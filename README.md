@@ -1,4 +1,4 @@
-<img alt="little-date banner" src="https://github.com/timolins/little-date/raw/main/.github/banner.png"/>
+<img height="237px" alt="little-date banner" src="https://github.com/timolins/little-date/raw/main/.github/banner.png"/>
 
 <div align="center">
     <img src="https://badgen.net/npm/v/little-date" alt="NPM Version" />
@@ -7,14 +7,13 @@
 </a>
 </div>
 <br />
-<div align="center"><strong><code>little-date</code></strong></div>
 
-<div align="center"><strong>Date-range formatting, made small and sweet.</strong></div>
-<div align="center">An opinionated formatter, that makes date ranges short and readable.</div>
+<div align="center"><strong>Small & sweet date-range formatting</strong></div>
+<div align="center">An opinionated library, that makes date-ranges short and readable.</div>
 
 <br />
 <div align="center">
-  <sub>Prepared by <a href="https://twitter.com/timolins">Timo Lins</a> 👨‍🍳 for a <a href="https://vercel.com/?ref=little-date">▲ Vercel</a> Hackathon</sub>
+  <sub>Prepared by <a href="https://x.com/timolins">Timo Lins</a> 👨‍🍳 for a <a href="https://vercel.com/?ref=little-date">▲ Vercel</a> Hackathon</sub>
 </div>
 
 <br />
