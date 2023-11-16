@@ -2,7 +2,6 @@
 
 <div align="center">
     <img src="https://badgen.net/npm/v/little-date" alt="NPM Version" />
-  <img src="https://badgen.net/bundlephobia/minzip/little-date" alt="minzipped size"/>
     <img src="https://github.com/timolins/little-date/workflows/CI/badge.svg" alt="Build Status" />
 </a>
 </div>
