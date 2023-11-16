@@ -6,6 +6,7 @@
   "license": "MIT",
   "repository": "timolins/little-date",
   "main": "dist/format-date-range.js",
+  "module": "dist/format-date-range.mjs",
   "types": "dist/format-date-range.d.ts",
   "engines": {
     "node": ">=10"
