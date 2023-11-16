@@ -1,40 +1,88 @@
-# little-date 📅
+<img alt="little-date banner" src="https://github.com/timolins/react-hot-toast/raw/main/.github/banner.png"/>
 
-A minimalistic and opinionated date formatting library for JavaScript.
+<div align="center">
+    <img src="https://badgen.net/npm/v/little-date" alt="NPM Version" />
+  <img src="https://badgen.net/bundlephobia/minzip/little-date" alt="minzipped size"/>
+    <img src="https://github.com/timolins/little-date/workflows/CI/badge.svg" alt="Build Status" />
+</a>
+</div>
+<br />
+<div align="center"><strong><code>little-date</code></strong></div>
 
-## Problem Statement
+<div align="center"><strong>Date-range formatting, made small and sweet.</strong></div>
+<div align="center">An opinionated formatter, that makes date ranges short and readable.</div>
 
-When building a date range picker or displaying date intervals in various applications, the representation can sometimes become overly verbose
+<br />
+<div align="center">
+  <sub>Prepared by <a href="https://twitter.com/timolins">Timo Lins</a> 👨‍🍳 for a <a href="https://vercel.com/?ref=little-date">▲ Vercel</a> Hackathon</sub>
+</div>
 
-**1. August 2023 - 31. August 2023**
-
-Such extended strings can hinder the user experience, especially in interfaces where space is valuable. `little-date` provides a solution by offering concise, human-readable date range formats, making date presentations more user-friendly.
-
-## Overview
-
-`little-date` offers an opinionated approach to date range presentation, ensuring consistent and intuitive date formats across your application. With its clear design principles and user-centric focus, `little-date` reduces the cognitive load for end-users.
+<br />
 
 ## Features
 
-- 📌 Simplified date range displays.
-- 📌 Lightweight and straightforward integration.
-- 📌 Comprehensive date range formats spanning from hours to full years.
+- 📖 **Short & readable output**
+- ⚙️ **Zero configuration**
+- ⏳ **Localization support** _(12 hour & 24-hour)_
+- 📅 **Supports broad range of cases**
 
-## Installation
+</br>
 
-```bash
-npm install little-date
-```
+**Sample Outputs**
+
+- `Jan 1 - 12`
+- `Jan 3 - Apr 20`
+- `January 2023`
+- `Q1 2023`
+
+You can find a full list of formatting examples [here](#formatting-examples).
 
 ## Usage
 
 ```js
 import { formatDateRange } from "little-date";
 
-const from = new Date("2021-01-01T12:00:00.000Z");
-const to = new Date("2021-01-12T12:00:00.000Z");
+const from = new Date("2021-01-01T00:00:00.000Z");
+const to = new Date("2021-01-12T23:59:59.999Z");
+
 console.log(formatDateRange(from, to)); // Outputs: "Jan 1 - 12"
 ```
+
+## Installation
+
+#### With pnpm
+
+```sh
+pnpm i little-date
+```
+
+#### With NPM
+
+```sh
+npm i little-date
+```
+
+## Formatting Examples
+
+| Description                               | Output                                   |
+| ----------------------------------------- | ---------------------------------------- |
+| Multiple days, same month                 | `Jan 1 - 12`                             |
+| Multiple days, different months           | `Jan 3 - Apr 20`                         |
+| Full day                                  | `Sun, Jan 1`                             |
+| Range spanning different years            | `Jan 1 '22 - Jan 20 '23`                 |
+| Full day, different year                  | `Sat, Jan 1, 2022`                       |
+| **Special Cases**                         |                                          |
+| Full year                                 | `2023`                                   |
+| Quarter range                             | `Q1 2023`                                |
+| Entire month                              | `January 2023`                           |
+| **With time**                             |                                          |
+| Today, different hours                    | `12am - 2:30pm`                          |
+| Same day, different hours                 | `Jan 1, 12:11am - 2:30pm`                |
+| Same day, different hours, 24-hour format | `Jan 1, 0:11 - 14:30`                    |
+| Hour difference within a day              | `Jan 1, 12pm - 12:59pm`                  |
+| Different days with time included         | `Jan 1, 12:11am - Jan 2, 2:30pm`         |
+| Different years with time                 | `Jan 1 '22, 12:11am - Jan 2 '23, 2:30pm` |
+| Different years, no time                  | `Jan 1 '22 - Jan 2 '23`                  |
 
 ## Contribute
 
