@@ -1,0 +1,21 @@
+{
+  "name": "little-date",
+  "version": "1.0.0",
+  "description": "Small & sweet date formatting library",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup src/format-date-range.ts --format cjs,esm --dts-resolve",
+    "test": "TZ=UTC vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  }
+}
