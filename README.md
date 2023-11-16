@@ -9,7 +9,7 @@
 <br />
 
 <div align="center"><strong>Small & sweet date-range formatting</strong></div>
-<div align="center">An opinionated library, that makes date-ranges short and readable.</div>
+<div align="center">An opinionated library that makes date-ranges short and readable.</div>
 
 <br />
 <div align="center">
@@ -20,10 +20,10 @@
 
 ## Features
 
-- 📖 **Short & readable output**
+- ✨ **Short & readable output**
 - ⚙️ **Zero configuration**
 - ⏳ **Localization support** _(12 hour & 24-hour)_
-- 📅 **Supports broad range of cases**
+- ✅ **Supports broad range of cases**
 
 </br>
 
