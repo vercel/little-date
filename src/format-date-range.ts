@@ -136,30 +136,22 @@ export const formatDateRange = (
     return `${format(from, "LLL d")} - ${format(to, "d")}${yearSuffix}`;
   }
 
-  // Range across hours
-  if (sameDay) {
-    // With times
-    // Example: Jan 1, 12:00pm - 1:00pm[, 2023]
-    if (startTimeSuffix || endTimeSuffix) {
-      // If it's today, don't include the date
-      // Example: 12:00pm - 1:00pm
-      if (thisDay) {
-        return `${formatTime(from)} - ${formatTime(to)}`;
-      }
-
-      // If it's not today, include the date
-      // Example: Jan 1, 12:00pm - 1:00pm[, 2023]
-      return `${format(from, "LLL d")}${startTimeSuffix} - ${formatTime(
-        to
-      )}${yearSuffix}`;
+  // Same day, different times
+  // Example: Jan 1, 12:00pm - 1:00pm[, 2023]
+  if (startTimeSuffix || endTimeSuffix) {
+    // If it's today, don't include the date
+    // Example: 12:00pm - 1:00pm
+    if (thisDay) {
+      return `${formatTime(from)} - ${formatTime(to)}`;
     }
 
-    // Full day
-    // Example: Fri, Jan 1[, 2023]
-    return `${format(from, "eee, LLL d")}${yearSuffix}`;
+    // Example: Jan 1, 12:00pm - 1:00pm[, 2023]
+    return `${format(from, "LLL d")}${startTimeSuffix} - ${formatTime(
+      to
+    )}${yearSuffix}`;
   }
 
-  return `${from.toLocaleDateString(locale)} - ${to.toLocaleDateString(
-    locale
-  )}`;
+  // Full day
+  // Example: Fri, Jan 1[, 2023]
+  return `${format(from, "eee, LLL d")}${yearSuffix}`;
 };
