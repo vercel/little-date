@@ -62,6 +62,7 @@ export const formatDateRange = (
   const sameMonth = isSameMonth(from, to);
   const sameDay = isSameDay(from, to);
   const thisYear = isSameYear(from, today);
+  const thisDay = isSameDay(from, today);
 
   const yearSuffix = thisYear ? "" : `, ${format(to, "yyyy")}`;
 
@@ -137,16 +138,18 @@ export const formatDateRange = (
   }
 
   // Range across hours
-  if (isSameDay(from, to)) {
+  if (sameDay) {
     // With times
     // Example: Jan 1, 12:00pm - 1:00pm[, 2023]
     if (startTimeSuffix || endTimeSuffix) {
       // If it's today, don't include the date
       // Example: 12:00pm - 1:00pm
-      if (isSameDay(from, today)) {
+      if (thisDay) {
         return `${formatTime(from)} - ${formatTime(to)}`;
       }
 
+      // If it's not today, include the date
+      // Example: Jan 1, 12:00pm - 1:00pm[, 2023]
       return `${format(from, "LLL d")}${startTimeSuffix} - ${formatTime(
         to
       )}${yearSuffix}`;
@@ -155,13 +158,6 @@ export const formatDateRange = (
     // Full day
     // Example: Fri, Jan 1[, 2023]
     return `${format(from, "eee, LLL d")}${yearSuffix}`;
-  }
-
-  // Example: Jan 1, 12:00pm - 1:00pm[, 2023]
-  if (isSameHour(from, to)) {
-    return `ABV${format(from, "LLL d")}, ${formatTime(from)} - ${formatTime(
-      to
-    )}${yearSuffix}`;
   }
 
   return `${from.toLocaleDateString(locale)} - ${to.toLocaleDateString(
