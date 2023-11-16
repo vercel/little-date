@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   date-fns:
-    specifier: ^2.30.0
+    specifier: ^2.0.0
     version: 2.30.0
 
 devDependencies:
