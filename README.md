@@ -1,4 +1,4 @@
-<img alt="little-date banner" src="https://github.com/timolins/react-hot-toast/raw/main/.github/banner.png"/>
+<img alt="little-date banner" src="https://github.com/timolins/little-date/raw/main/.github/banner.png"/>
 
 <div align="center">
     <img src="https://badgen.net/npm/v/little-date" alt="NPM Version" />
