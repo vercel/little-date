@@ -51,14 +51,14 @@ describe("format date range", () => {
 
   test("format date range same day, different hours, with 24-hour locale", () => {
     const from = new Date("2023-01-01T00:11:00.000Z");
-    const to = new Date("2023-01-01T14:30:59.999Z");
+    const to = new Date("2023-01-01T14:00:59.999Z");
 
     expect(
       formatDateRange(from, to, {
         ...defaultOptions,
         locale: "en-GB",
       })
-    ).toBe("Jan 1, 0:11 - 14:30");
+    ).toBe("Jan 1, 0:11 - 14:00");
   });
 
   test("format date range different days with time", () => {

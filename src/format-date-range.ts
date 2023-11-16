@@ -17,7 +17,9 @@ import {
 
 const shortenAmPm = (text: string): string => {
   const shortened = (text || "").replace(/ AM/g, "am").replace(/ PM/g, "pm");
-  const withoutDoubleZero = shortened.replace(/:00/g, "");
+  const withoutDoubleZero = shortened.includes("m")
+    ? shortened.replace(/:00/g, "")
+    : shortened;
   return withoutDoubleZero;
 };
 
