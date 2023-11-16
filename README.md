@@ -93,7 +93,7 @@ import { formatDateRange } from "little-date";
 
 formatDateRange(from, to, {
   locale: "de-AT", // Overwrite the default locale
-  enableTime: false, // Prevent time from being displayed
+  includeTime: false, // Prevent time from being displayed
 });
 ```
 
