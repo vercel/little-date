@@ -7,6 +7,9 @@
   "repository": "timolins/little-date",
   "main": "dist/format-date-range.js",
   "types": "dist/format-date-range.d.ts",
+  "engines": {
+    "node": ">=10"
+  },
   "files": [
     "dist",
     "src"
