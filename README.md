@@ -9,9 +9,6 @@
 
 <div align="center"><strong>Small & sweet date-range formatting</strong></div>
 <div align="center">An opinionated library that makes date-ranges short and readable.</div>
-<div align="center">
-Based on <a href="https://date-fns.org/">date-fns</a>.
-</div>
 
 <br />
 <div align="center">
