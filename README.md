@@ -1,4 +1,4 @@
-<img height="237px" alt="little-date banner" src="https://github.com/timolins/little-date/raw/main/.github/banner.png"/>
+<img alt="little-date banner" src="https://github.com/timolins/little-date/raw/main/.github/banner.png"/>
 
 <div align="center">
     <img src="https://badgen.net/npm/v/little-date?" alt="NPM Version" />
@@ -94,6 +94,7 @@ import { formatDateRange } from "little-date";
 formatDateRange(from, to, {
   locale: "de-AT", // Overwrite the default locale
   includeTime: false, // Prevent time from being displayed
+  today: new Date(), // Overwrite the default "today" date, useful for testing
 });
 ```
 
