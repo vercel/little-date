@@ -35,7 +35,7 @@ It supports localization and can be used in both Node.js and the browser.
 - `January 2023`
 - `Q1 2023`
 
-Wan't that easy to read? You can find a full list of formatting examples [here](#formatting-examples).
+Wasn't that easy to read? You can find a full list of formatting examples [here](#formatting-examples).
 
 ## Usage
 
