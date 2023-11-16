@@ -1,6 +1,6 @@
 {
   "name": "little-date",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Small & sweet date-range formatting library",
   "author": "Timo Lins",
   "license": "MIT",
