@@ -1,7 +1,7 @@
 <img height="237px" alt="little-date banner" src="https://github.com/timolins/little-date/raw/main/.github/banner.png"/>
 
 <div align="center">
-    <img src="https://badgen.net/npm/v/little-date" alt="NPM Version" />
+    <img src="https://badgen.net/npm/v/little-date?" alt="NPM Version" />
     <img src="https://github.com/timolins/little-date/workflows/CI/badge.svg" alt="Build Status" />
 </a>
 </div>
