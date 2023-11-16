@@ -9,6 +9,9 @@
 
 <div align="center"><strong>Small & sweet date-range formatting</strong></div>
 <div align="center">An opinionated library that makes date-ranges short and readable.</div>
+<div align="center">
+Based on <a href="https://date-fns.org/">date-fns</a>.
+</div>
 
 <br />
 <div align="center">
@@ -17,33 +20,32 @@
 
 <br />
 
-## Features
+## Introduction
 
-- ✨ **Short & readable output**
-- ⚙️ **Zero configuration**
-- ⏳ **Localization support** _(12 hour & 24-hour)_
-- ✅ **Supports broad range of cases**
+When displaying date-ranges in UI, they are often too long and hard to read. This library tries to solve that problem.
 
-</br>
+`little-date` is a date-formatting library, based on [date-fns](https://date-fns.org/). It aims to make date ranges **short**, **readable** and **easy to understand**.
 
-**Sample Outputs**
+It supports localization and can be used in both Node.js and the browser.
+
+**Examples dates ✨**
 
 - `Jan 1 - 12`
 - `Jan 3 - Apr 20`
 - `January 2023`
 - `Q1 2023`
 
-You can find a full list of formatting examples [here](#formatting-examples).
+Wan't that easy to read? You can find a full list of formatting examples [here](#formatting-examples).
 
 ## Usage
 
 ```js
 import { formatDateRange } from "little-date";
 
-const from = new Date("2021-01-01T00:00:00.000Z");
-const to = new Date("2021-01-12T23:59:59.999Z");
+const from = new Date("2023-01-01T00:00:00.000Z");
+const to = new Date("2023-01-12T23:59:59.999Z");
 
-console.log(formatDateRange(from, to)); // Outputs: "Jan 1 - 12"
+formatDateRange(from, to); // Outputs: "Jan 1 - 12"
 ```
 
 ## Installation
@@ -68,8 +70,9 @@ npm i little-date
 | Multiple days, different months           | `Jan 3 - Apr 20`                         |
 | Full day                                  | `Sun, Jan 1`                             |
 | Range spanning different years            | `Jan 1 '22 - Jan 20 '23`                 |
+| Multiple days, same month, different year | `Jan 1 - 12, 2022`                       |
 | Full day, different year                  | `Sat, Jan 1, 2022`                       |
-| **Special Cases**                         |                                          |
+| **Special cases**                         |                                          |
 | Full year                                 | `2023`                                   |
 | Quarter range                             | `Q1 2023`                                |
 | Entire month                              | `January 2023`                           |
@@ -81,6 +84,21 @@ npm i little-date
 | Different days with time included         | `Jan 1, 12:11am - Jan 2, 2:30pm`         |
 | Different years with time                 | `Jan 1 '22, 12:11am - Jan 2 '23, 2:30pm` |
 | Different years, no time                  | `Jan 1 '22 - Jan 2 '23`                  |
+
+## Advanced Options
+
+Most of of the formatting behavior is opinionated and can't be changed. However, there are some options that can be used to customize the output.
+
+```js
+import { formatDateRange } from "little-date";
+
+// ...
+
+formatDateRange(from, to, {
+  locale: "de-AT", // Overwrite the default locale
+  enableTime: false, // Prevent time from being displayed
+});
+```
 
 ## Contribute
 
