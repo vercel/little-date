@@ -6,9 +6,16 @@
   "license": "MIT",
   "repository": "timolins/little-date",
   "type": "module",
-  "main": "./dist/format-date-range.js",
-  "module": "./dist/format-date-range.mjs",
+  "main": "./dist/format-date-range.cjs",
+  "module": "./dist/format-date-range.js",
   "types": "./dist/format-date-range.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/format-date-range.cjs",
+      "import": "./dist/format-date-range.js",
+      "types": "./dist/format-date-range.d.ts"
+    }
+  },
   "engines": {
     "node": ">=10"
   },
@@ -17,7 +24,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsup src/format-date-range.ts --format cjs,esm --dts-resolve",
+    "build": "tsup",
     "dev": "TZ=UTC vitest",
     "test": "TZ=UTC vitest run",
     "coverage": "TZ=UTC  vitest run --coverage"
