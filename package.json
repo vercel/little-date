@@ -5,14 +5,13 @@
   "author": "Timo Lins",
   "license": "MIT",
   "repository": "timolins/little-date",
-  "type": "module",
-  "main": "./dist/format-date-range.cjs",
-  "module": "./dist/format-date-range.js",
+  "main": "./dist/format-date-range.js",
+  "module": "./dist/format-date-range.mjs",
   "types": "./dist/format-date-range.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/format-date-range.cjs",
-      "import": "./dist/format-date-range.js",
+      "require": "./dist/format-date-range.js",
+      "import": "./dist/format-date-range.mjs",
       "types": "./dist/format-date-range.d.ts"
     }
   },
