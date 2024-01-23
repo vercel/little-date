@@ -1,18 +1,23 @@
 {
   "name": "little-date",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Small & sweet date-range formatting library",
   "author": "Timo Lins",
   "license": "MIT",
   "repository": "timolins/little-date",
-  "main": "./dist/format-date-range.js",
-  "module": "./dist/format-date-range.mjs",
-  "types": "./dist/format-date-range.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/es/index.mjs",
+  "types": "./dist/cjs/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/format-date-range.js",
-      "import": "./dist/format-date-range.mjs",
-      "types": "./dist/format-date-range.d.ts"
+      "import": {
+        "types": "./dist/es/index.d.mts",
+        "default": "./dist/es/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
     }
   },
   "engines": {
@@ -23,7 +28,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "bunchee",
     "dev": "TZ=UTC vitest",
     "test": "TZ=UTC vitest run",
     "coverage": "TZ=UTC  vitest run --coverage"
@@ -36,7 +41,7 @@
   ],
   "devDependencies": {
     "@vitest/coverage-v8": "^0.34.6",
-    "tsup": "^7.2.0",
+    "bunchee": "^4.4.1",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },

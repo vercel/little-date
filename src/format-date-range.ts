@@ -68,6 +68,7 @@ export const formatDateRange = (
   const sameDay = isSameDay(from, to);
   const thisYear = isSameYear(from, today);
   const thisDay = isSameDay(from, today);
+  const toDateIsNow = isSameMinute(to, today);
 
   const yearSuffix = thisYear ? "" : `, ${format(to, "yyyy")}`;
 
