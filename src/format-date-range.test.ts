@@ -155,6 +155,10 @@ describe("format date range", () => {
     const from = new Date("2023-01-01T00:00:00.000Z");
     const to = new Date("2023-01-12T23:59:59.999Z");
 
-    expect(formatDateRange(from, to)).toBe("Jan 1 - 12");
+    expect(
+      formatDateRange(from, to, {
+        today,
+      })
+    ).toBe("Jan 1 - 12");
   });
 });
