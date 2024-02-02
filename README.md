@@ -72,7 +72,8 @@ npm i little-date
 | **Special cases**                         |                                          |
 | Full year                                 | `2023`                                   |
 | Quarter range                             | `Q1 2023`                                |
-| Entire month                              | `January 2023`                           |
+| Full month                                | `January 2023`                           |
+| Full months                               | `Jan - Feb 2023`                         |
 | **With time**                             |                                          |
 | Today, different hours                    | `12am - 2:30pm`                          |
 | Same day, different hours                 | `Jan 1, 12:11am - 2:30pm`                |
