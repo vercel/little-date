@@ -12,7 +12,7 @@
 
 <br />
 <div align="center">
-  <sub>Prepared by <a href="https://x.com/timolins">Timo Lins</a> 👨‍🍳 for a <a href="https://vercel.com/?ref=little-date">▲ Vercel</a> Hackathon</sub>
+  <sub>Prepared by <a href="https://x.com/timolins">Timo Lins</a> 👨‍🍳 during a <a href="https://vercel.com/?ref=little-date">▲ Vercel</a> Hackathon</sub>
 </div>
 
 <br />
