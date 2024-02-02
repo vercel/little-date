@@ -151,6 +151,13 @@ describe("format date range", () => {
     expect(formatDateRange(from, to, defaultOptions)).toBe("Q1 2023");
   });
 
+  test("across two full months", () => {
+    const from = new Date("2023-01-01T00:00:00.000Z");
+    const to = new Date("2023-02-28T23:59:59.999Z");
+
+    expect(formatDateRange(from, to, defaultOptions)).toBe("Jan - Feb 2023");
+  });
+
   test("automatic locale detection should not fail", () => {
     const from = new Date("2023-01-01T00:00:00.000Z");
     const to = new Date("2023-01-12T23:59:59.999Z");

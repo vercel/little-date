@@ -101,13 +101,17 @@ export const formatDateRange = (
     return `Q${getQuarter(from)} ${format(from, "yyyy")}`;
   }
 
-  // Check if the range is the entire month
-  // Example: January 2023
+  // Check if the range is across entire month
   if (
     isSameMinute(startOfMonth(from), from) &&
     isSameMinute(endOfMonth(to), to)
   ) {
-    return `${format(from, "LLLL yyyy")}`;
+    if (sameMonth && sameYear) {
+      // Example: January 2023
+      return `${format(from, "LLLL yyyy")}`;
+    }
+    // Example: Jan - Feb 2023
+    return `${format(from, "LLL")} - ${format(to, "LLL yyyy")}`;
   }
 
   // Range across years
