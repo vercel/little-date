@@ -158,6 +158,18 @@ describe("format date range", () => {
     expect(formatDateRange(from, to, defaultOptions)).toBe("Jan - Feb 2023");
   });
 
+  test("custom separator", () => {
+    const from = new Date("2023-01-01T00:00:00.000Z");
+    const to = new Date("2023-01-12T23:59:59.999Z");
+
+    expect(
+      formatDateRange(from, to, {
+        ...defaultOptions,
+        separator: "to",
+      })
+    ).toBe("Jan 1 to 12");
+  });
+
   test("automatic locale detection should not fail", () => {
     const from = new Date("2023-01-01T00:00:00.000Z");
     const to = new Date("2023-01-12T23:59:59.999Z");

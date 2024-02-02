@@ -96,6 +96,7 @@ formatDateRange(from, to, {
   locale: "de-AT", // Overwrite the default locale
   includeTime: false, // Prevent time from being displayed
   today: new Date(), // Overwrite the default "today" date, useful for testing
+  separator: "-", // Overwrite the default separator. E.g. from "Jan 1 - 12" to "Jan 1 to 12"
 });
 ```
 
