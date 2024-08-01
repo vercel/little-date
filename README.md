@@ -19,11 +19,23 @@
 
 ## Introduction
 
-When displaying date-ranges in UI, they are often too long and hard to read. This library tries to solve that problem.
+When displaying date-ranges in UI, they are often too long, repetitive, and hard to read. `little-date` solves this problem by making date ranges **short**, **readable**, and **easy to understand**.
 
-`little-date` is a date-formatting library, based on [date-fns](https://date-fns.org/). It aims to make date ranges **short**, **readable** and **easy to understand**.
+Consider this example:
 
-It supports localization and can be used in both Node.js and the browser.
+```javascript
+// Typical long format
+console.log(`${from.toLocaleString()} - ${to.toLocaleString()}`);
+// Output: "1/1/2024, 00:00:00 AM - 1/12/2024, 23:59:59 PM"
+
+// With little-date
+console.log(formatDateRange(from, to));
+// Output: "Jan 1 - 12"
+```
+
+It significantly reduces the clutter while maintaining clarity. It's perfect for dashboards, reports, or any UI where space is at a premium.
+
+`little-date` is based based on [date-fns](https://date-fns.org/). It supports localization and can be used in both Node.js and the browser.
 
 **Examples dates ✨**
 
@@ -67,8 +79,8 @@ npm i little-date
 | Multiple days, different months           | `Jan 3 - Apr 20`                         |
 | Full day                                  | `Sun, Jan 1`                             |
 | Range spanning different years            | `Jan 1 '22 - Jan 20 '23`                 |
-| Multiple days, same month, different year | `Jan 1 - 12, 2022`                       |
-| Full day, different year                  | `Sat, Jan 1, 2022`                       |
+| Multiple days, same month, past year      | `Jan 1 - 12, 2022`                       |
+| Full day, past year                       | `Sat, Jan 1, 2022`                       |
 | **Special cases**                         |                                          |
 | Full year                                 | `2023`                                   |
 | Quarter range                             | `Q1 2023`                                |
