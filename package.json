@@ -4,7 +4,7 @@
   "description": "Small & sweet date-range formatting library",
   "author": "Timo Lins",
   "license": "MIT",
-  "repository": "timolins/little-date",
+  "repository": "vercel/little-date",
   "main": "./dist/cjs/index.js",
   "module": "./dist/es/index.mjs",
   "types": "./dist/cjs/index.d.ts",
