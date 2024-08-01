@@ -1,8 +1,8 @@
-<img alt="little-date banner" src="https://github.com/timolins/little-date/raw/main/.github/banner.png"/>
+<img alt="little-date banner" src="https://github.com/vercel/little-date/raw/main/.github/banner.png"/>
 
 <div align="center">
     <img src="https://badgen.net/npm/v/little-date?" alt="NPM Version" />
-    <img src="https://github.com/timolins/little-date/workflows/CI/badge.svg" alt="Build Status" />
+    <img src="https://github.com/vercel/little-date/workflows/CI/badge.svg" alt="Build Status" />
 </a>
 </div>
 <br />
@@ -99,6 +99,12 @@ formatDateRange(from, to, {
   separator: "-", // Overwrite the default separator. E.g. from "Jan 1 - 12" to "Jan 1 to 12"
 });
 ```
+
+## Customization
+
+To keep things simple, there is minimal customization offered by `little-date`.
+
+For more extensive customization beyond the provided options, it's recommended to copy the implementation from [`src/format-date-range.ts`](https://github.com/vercel/little-date/blob/main/src/format-date-range.ts) into your own repository. This allows you to modify the formatting logic to precisely fit your needs.
 
 ## Contribute
 
