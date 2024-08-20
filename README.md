@@ -95,7 +95,7 @@ npm i little-date
 
 ## Advanced Options
 
-Most of of the formatting behavior is opinionated and can't be changed. However, there are some options that can be used to customize the output.
+Most of the formatting behavior is opinionated and can't be changed. However, there are some options that can be used to customize the output.
 
 ```js
 import { formatDateRange } from "little-date";
