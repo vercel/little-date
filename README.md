@@ -33,7 +33,7 @@ console.log(formatDateRange(from, to));
 // Output: "Jan 1 - 12"
 ```
 
-`little-date` is based based on [date-fns](https://date-fns.org/). It supports localization and can be used in both Node.js and the browser.
+`little-date` is based on [date-fns](https://date-fns.org/). It supports localization and can be used in both Node.js and the browser.
 
 **Examples dates ✨**
 
