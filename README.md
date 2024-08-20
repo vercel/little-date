@@ -80,10 +80,10 @@ npm i little-date
 | Multiple days, same month, past year      | `Jan 1 - 12, 2022`                       |
 | Full day, past year                       | `Sat, Jan 1, 2022`                       |
 | **Special cases**                         |                                          |
-| Full year                                 | `2023`                                   |
-| Quarter range                             | `Q1 2023`                                |
-| Full month                                | `January 2023`                           |
-| Full months                               | `Jan - Feb 2023`                         |
+| [Full year](https://github.com/vercel/little-date/blob/main/src/format-date-range.test.ts#L140-L145)                                 | `2023`                                   |
+| [Quarter range](https://github.com/vercel/little-date/blob/main/src/format-date-range.test.ts#L147-L152)                             | `Q1 2023`                                |
+| [Full month](https://github.com/vercel/little-date/blob/main/src/format-date-range.test.ts#L110-L115)                                | `January 2023`                           |
+| [Full months](https://github.com/vercel/little-date/blob/main/src/format-date-range.test.ts#L154-L159)                               | `Jan - Feb 2023`                         |
 | **With time**                             |                                          |
 | Today, different hours                    | `12am - 2:30pm`                          |
 | Same day, different hours                 | `Jan 1, 12:11am - 2:30pm`                |
