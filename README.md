@@ -33,8 +33,6 @@ console.log(formatDateRange(from, to));
 // Output: "Jan 1 - 12"
 ```
 
-It significantly reduces the clutter while maintaining clarity. It's perfect for dashboards, reports, or any UI where space is at a premium.
-
 `little-date` is based based on [date-fns](https://date-fns.org/). It supports localization and can be used in both Node.js and the browser.
 
 **Examples dates ✨**
