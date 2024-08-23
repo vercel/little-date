@@ -2,7 +2,7 @@ import {
   isSameDay,
   isSameYear,
   isSameMonth,
-  format,
+  format as _format,
   startOfDay,
   startOfMonth,
   endOfMonth,
@@ -13,7 +13,12 @@ import {
   startOfQuarter,
   endOfQuarter,
   endOfYear,
+  Locale
 } from "date-fns";
+import * as Locales from 'date-fns/locale';
+
+const DEFAULT_LOCALE = 'en-US' as const;
+const DEFAULT_LOCALE_WITHOUT_HYPHEN = DEFAULT_LOCALE.replace('-', '') as keyof typeof Locales;
 
 const shortenAmPm = (text: string): string => {
   const shortened = (text || "").replace(/ AM/g, "am").replace(/ PM/g, "pm");
@@ -43,7 +48,7 @@ const createFormatTime =
 
 const getNavigatorLanguage = (): string => {
   if (typeof window === "undefined") {
-    return "en-US";
+    return DEFAULT_LOCALE;
   }
   return window.navigator.language;
 };
@@ -54,6 +59,27 @@ export interface DateRangeFormatOptions {
   includeTime?: boolean;
   separator?: string;
 }
+
+const isKnownLocale = (key: string): key is keyof typeof Locales => {
+  return key in Locales;
+};
+
+const getLocaleDateFns = (locale: string): Locale => {
+  if (isKnownLocale(locale)) {
+    return Locales[locale];
+  }
+  const rootLocale = locale.substring(0, 2);
+  if (isKnownLocale(rootLocale)) {
+    return Locales[rootLocale];
+  }
+  return Locales[DEFAULT_LOCALE_WITHOUT_HYPHEN];
+};
+
+const createLocaleFormatter = (locale: string) => {
+  return (date: Date | number, formatStr: string) => {
+    return _format(date, formatStr, { locale: getLocaleDateFns(locale) });
+  };
+};
 
 export const formatDateRange = (
   from: Date,
@@ -70,6 +96,8 @@ export const formatDateRange = (
   const sameDay = isSameDay(from, to);
   const thisYear = isSameYear(from, today);
   const thisDay = isSameDay(from, today);
+
+  const format = createLocaleFormatter(locale);
 
   const yearSuffix = thisYear ? "" : `, ${format(to, "yyyy")}`;
 
