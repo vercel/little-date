@@ -47,5 +47,6 @@
   },
   "dependencies": {
     "date-fns": "^2.0.0"
-  }
+  },
+  "packageManager": "pnpm@9.8.0+sha1.33f415ae4331f9b29a92dd9bbef959b916d65535"
 }
