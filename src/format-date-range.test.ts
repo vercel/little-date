@@ -180,4 +180,11 @@ describe("format date range", () => {
       })
     ).toBe("Jan 1 - 12");
   });
+
+  test("uses provided timezone when formatting time", () => {
+    const from = today;
+    const to = new Date(today.getTime() + 60 * 60 * 1000); // Today + 1 hour
+
+    expect(formatDateRange(from, to, { ...defaultOptions, timezone: "Asia/Baku" })).toBe("4pm - 5pm");
+  });
 });

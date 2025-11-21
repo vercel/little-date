@@ -25,21 +25,18 @@ const shortenAmPm = (text: string): string => {
 
 const removeLeadingZero = (text: string): string => text.replace(/^0/, "");
 
-export const formatTime = (date: Date, locale?: string): string => {
-  return removeLeadingZero(
+const createFormatTime =
+  (locale?: string, tz?: string) =>
+  (date: Date): string =>
+    removeLeadingZero(
     shortenAmPm(
       date.toLocaleTimeString(locale, {
         hour: "2-digit",
         minute: "2-digit",
+        timeZone: tz,
       }) || ""
     )
   );
-};
-
-const createFormatTime =
-  (locale?: string) =>
-  (date: Date): string =>
-    formatTime(date, locale);
 
 const getNavigatorLanguage = (): string => {
   if (typeof window === "undefined") {
@@ -53,6 +50,7 @@ export interface DateRangeFormatOptions {
   locale?: string;
   includeTime?: boolean;
   separator?: string;
+  timezone?: string;
 }
 
 export const formatDateRange = (
@@ -63,6 +61,7 @@ export const formatDateRange = (
     locale = getNavigatorLanguage(),
     includeTime = true,
     separator = "-",
+    timezone,
   }: DateRangeFormatOptions = {}
 ): string => {
   const sameYear = isSameYear(from, to);
@@ -73,7 +72,7 @@ export const formatDateRange = (
 
   const yearSuffix = thisYear ? "" : `, ${format(to, "yyyy")}`;
 
-  const formatTime = createFormatTime(locale);
+  const formatTime = createFormatTime(locale, timezone);
 
   const startTimeSuffix =
     includeTime && !isSameMinute(startOfDay(from), from)

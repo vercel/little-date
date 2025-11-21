@@ -47,10 +47,10 @@ Wasn't that easy to read? You can find a full list of formatting examples [here]
 ## Usage
 
 ```js
-import { formatDateRange } from "little-date";
+import { formatDateRange } from 'little-date';
 
-const from = new Date("2023-01-01T00:00:00.000Z");
-const to = new Date("2023-01-12T23:59:59.999Z");
+const from = new Date('2023-01-01T00:00:00.000Z');
+const to = new Date('2023-01-12T23:59:59.999Z');
 
 formatDateRange(from, to); // Outputs: "Jan 1 - 12"
 ```
@@ -98,15 +98,16 @@ npm i little-date
 Most of the formatting behavior is opinionated and can't be changed. However, there are some options that can be used to customize the output.
 
 ```js
-import { formatDateRange } from "little-date";
+import { formatDateRange } from 'little-date';
 
 // ...
 
 formatDateRange(from, to, {
-  locale: "de-AT", // Overwrite the default locale
+  locale: 'de-AT', // Overwrite the default locale
   includeTime: false, // Prevent time from being displayed
   today: new Date(), // Overwrite the default "today" date, useful for testing
-  separator: "-", // Overwrite the default separator. E.g. from "Jan 1 - 12" to "Jan 1 to 12"
+  separator: '-', // Overwrite the default separator. E.g. from "Jan 1 - 12" to "Jan 1 to 12"
+  timezone: 'Europe/Vienna', // Overwrite the timezone used for displaying times
 });
 ```
 
